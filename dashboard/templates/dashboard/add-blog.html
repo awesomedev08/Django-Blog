@@ -1,0 +1,27 @@
+{% include 'dashboard/index.html' %}
+{% load crispy_forms_tags %}
+
+<div class='container'>
+    {% include 'main/utils/msg.html' %}
+    <form method='POST' enctype="multipart/form-data">
+        {% csrf_token %}
+        {% crispy form %}
+    </form>
+</div>
+<script>
+   CKEDITOR.replace('id_body_text', {
+                    filebrowserBrowseUrl: '/dashboard/list-images',
+                })
+                
+                CKEDITOR.on('instanceReady', function(evt) {
+                    evt.editor.dataProcessor.htmlFilter.addRules({
+                        elements: {
+                            img: function(el){
+                                el.addClass('img-fluid'),
+                                el.addClass('mb-5'),
+                                el.addClass('rounded')
+                            }
+                        }
+                    })
+                })
+</script>

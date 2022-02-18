@@ -1,0 +1,9 @@
+{% include 'dashboard/index.html' %}
+
+<div class='container'>
+    <form method="POST">
+        {% csrf_token %}
+        <p>Are you sure want to delete this "{{title}}"?</p>
+        <button type='submit' class='btn btn-outline-danger'>Delete</submit>
+    </form>
+</div>

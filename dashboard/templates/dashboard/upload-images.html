@@ -1,0 +1,8 @@
+{% include 'dashboard/index.html' %}
+{% load crispy_forms_tags %}
+<div class="container w-50">
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        {% crispy form %}
+    </form>
+</div>

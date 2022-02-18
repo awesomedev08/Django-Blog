@@ -1,0 +1,35 @@
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 20px;
+    text-transform: uppercase;
+}
+.title-blog {
+    font-weight: bold;
+    line-height: 1.6;
+}
+.recent-posts {
+    padding: 10px;
+}
+.recent-posts ul li {
+    list-style-type: none;
+    margin-bottom: 10px;
+}
+.body-blog {
+    font-family: 'Dosis', sans-serif;
+    font-family: 'Raleway', sans-serif;
+}
+.body-blog .content-blog {
+
+    font-size: 18px;
+}
+.navbar-light .navbar-nav .nav-link {
+    color: black;
+    font-size: 18px;
+}
+.text-opening {
+    margin-top: 15px;
+    font-size: 17px;
+    line-height: 1.5;
+}
+.landing-wrapper {
+    padding-left: 200px;
+}

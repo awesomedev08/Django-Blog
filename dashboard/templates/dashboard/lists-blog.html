@@ -1,0 +1,38 @@
+
+{% include 'dashboard/index.html' %}
+
+{% load my_filter %}
+
+<div class='container mt-2'>
+    <div class='table-responsive-sm'>
+        <table class='table table-bordered'>
+            <thead>
+                <tr>
+                    <th scope='col'>ID</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for blog in blog_lists %}
+                <tr>
+                    <th scope='row'>{{blog.id}}</th>
+                    <td>{{blog.title}}</td>
+                    <td>
+                        <a href='{% url "dashboard:edit_blog" blog.id %}' class='mr-1'>Edit</a>
+                        <a href='{% url "dashboard:delete_blog" blog.id %}' class='text-danger'>Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        {% if is_paginated %}
+            <div class='d-flex justify-content-center'>
+                {% for i in page_obj.paginator.num_pages|ro %}
+                    <a href='?page={{i}}' class='paginate-link'>{{i}}</a>
+                {% endfor %}
+        {% endif %}
+        </a>
+    </div>
+</div>

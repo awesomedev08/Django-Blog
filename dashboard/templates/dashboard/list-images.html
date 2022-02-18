@@ -1,0 +1,23 @@
+{% include 'dashboard/index.html' %}
+
+<div class="container">
+    <div class="row">
+        {% for img in images %}
+            <img src="{{img.img.url}}" class="img-thumbnail w-50" alt="{{img.name}}" onclick="clickimage(this)">
+        {% endfor %}
+    </div>
+
+</div>
+<script type='text/javascript'>
+function getUrlParam( paramName ) {
+        var reParam = new RegExp( '(?:[\?&]|&)' + paramName + '=([^&]+)', 'i' );
+        var match = window.location.search.match( reParam );
+
+        return ( match && match.length > 1 ) ? match[1] : null;
+        }
+function clickimage(img){
+        var funcNum = getUrlParam('CKEditorFuncNum')
+        window.opener.CKEDITOR.tools.callFunction(funcNum, img.src);
+        window.close()
+}
+</script>

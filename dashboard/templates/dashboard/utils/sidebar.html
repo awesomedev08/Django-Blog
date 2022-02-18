@@ -1,0 +1,11 @@
+<div id='sidebar' class='mySidebar'>
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
+    <a class="item-menu" href="#blogcollapse" role="button" data-toggle="collapse" aria-controls="blogcollapse">Blog</a>
+    <div class="collapse" id="blogcollapse">
+        <a href="{% url 'dashboard:add_blog' %}" class="item-menu">> Add Blog</a>
+        <a href="{% url 'dashboard:lists_blog' %}" class="item-menu">> Lists Blog</a>
+    </div>
+    <a href="{% url 'dashboard:profile' user.id%} " class='item-menu'>Profile</a>
+    <a href='{% url "dashboard:change_password" %}' class='item-menu'>Change Password</a>
+    <a href='{% url "dashboard:logout" %}' class='btn btn-outline-danger mt-3' style='width: 80px;'>Logout</a>
+</div>

@@ -1,0 +1,20 @@
+{% extends 'main/base.html' %}
+
+
+
+{% block title %} Welcome to the play-zone!{% endblock %}
+{% block additional_static %}
+
+{% load static %}
+<link rel='stylesheet' href='{% static "dashboard/css/styles.css"%}'>
+
+{% endblock %}
+{% block content %}
+
+{% include 'dashboard/utils/sidebar.html' %}
+
+<button class="openbtn" onclick="openNav()" style='margin-left: 20px;margin-top: 15px;'>☰</button>  
+<script type='text/javascript' src='{% static "dashboard/js/script.js"%}'></script>
+<script src='https://cdn.ckeditor.com/4.17.1/standard/ckeditor.js'></script>
+{% endblock %}
+

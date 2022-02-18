@@ -1,0 +1,16 @@
+{% extends 'main/base.html' %}
+
+{% block title %}Login Page{% endblock %}
+
+{% load crispy_forms_tags %}
+
+{% block content %}
+<div class='container mt-4'>
+    <form method="POST">
+        {% include 'main/utils/msg.html' %}
+
+        {% csrf_token %}
+        {% crispy form %}
+    </form>
+</div>
+{% endblock %}

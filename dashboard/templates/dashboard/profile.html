@@ -1,0 +1,9 @@
+{% include 'dashboard/index.html' %}
+{% load crispy_forms_tags %}
+<div class='container mt-5'>
+    {% include 'main/utils/msg.html' %}
+    <form method="post">
+        {% csrf_token %}
+        {% crispy form %}
+    </form>
+</div>

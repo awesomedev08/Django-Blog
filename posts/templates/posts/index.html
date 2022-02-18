@@ -1,0 +1,31 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    Blog Lists
+{% endblock %}
+
+{% load post_tags %}
+
+{% block content %}
+{% include 'main/utils/navbar.html' %}
+    <div class="container mt-5 body-blog">
+       <div class="row">
+           <div class="col-lg-8">
+               {% for post in posts %}
+               <article>
+                   <header class="mb-4">
+                       <a href="{% url 'blog:detail_blog' post.slug %}"><h3 class="title-blog text-dark">{{post.title}}</h3> </a>
+                       <div class="text-muted mb-3 fst-italic">Posted on {{post.created_at}} By {{post.author}}</div>
+                   </header>
+                   <section class="mb-5">
+                       {{post.body_text|short_description}}
+                   </section>
+               </article>
+               {% endfor %}
+           </div>
+           <div class="col-lg-4">
+               {% include 'posts/utils/categories-card.html' %}
+           </div>
+       </div>
+    </div>
+{% endblock %}

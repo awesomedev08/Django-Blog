@@ -1,0 +1,52 @@
+
+{% extends 'main/base.html' %}
+
+{% block title %}
+    {{post.title}}
+{% endblock %}
+{% block content %}
+{% include 'main/utils/navbar.html' %}
+
+{% load post_tags %}
+
+<div class="container mt-5 body-blog">
+    <div class="row">
+        <div class="col-lg-8">
+            <article>
+                <header class="mb-4">
+                    <h1 class="title-blog">{{post.title}}</h1>
+                    <div class="text-muted mb-3 fst-italic">Posted on {{post.created_at}} by {{post.author}}</div>
+                    {% if post.categories.all %}
+                        {% for categories in post.categories.all %}
+                            <a class="btn btn-outline-dark">{{categories}}</a>
+                        {% endfor %}
+                    {% endif %}
+                    <img src="{{post.img.url}}" class="img-fluid rounded mt-3">
+                </header>
+                <section class="mb-4 content-blog">
+                    {{post.body_text|safe}}
+                </section>
+            </article>
+        </div>
+        <div class="col-lg-4 recent-posts">
+            <div class="card mb-4">
+                <div class="card-header">
+                    Recent Posts
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled">
+
+                        {% recent_posts as recent %}
+
+                        {% for new_post in recent %}
+                            <li>
+                                <a href="{% url 'blog:detail_blog' new_post.slug %}" class="text-dark">{{new_post}}</a>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+            {% include 'posts/utils/categories-card.html' %}
+        </div>
+</div>
+{% endblock %}
