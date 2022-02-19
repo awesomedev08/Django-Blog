@@ -1,8 +1,7 @@
 from django import template
 from django.template.loader import get_template
 from posts.models import Post, Category
-import re 
-
+import re , os 
 register = template.Library()
 
 @register.simple_tag(takes_context=True)
@@ -22,3 +21,6 @@ def all_categories(contest):
 def short_description(value, l=200):
     return ' '.join(re.findall('<p>([\w\d\s\,\.\-]+)</p>', value))[0:int(l)]
 
+@register.filter(name='is_exists')
+def is_exists(value):
+    return os.path.exists(value)
