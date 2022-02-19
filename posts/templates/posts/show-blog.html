@@ -21,7 +21,9 @@
                             <a class="btn btn-outline-dark">{{categories}}</a>
                         {% endfor %}
                     {% endif %}
-                    <img src="{{post.img.url}}" class="img-fluid rounded mt-3">
+                    {% if post.img.path|is_exists %}
+                        <img src="{{post.img.url}}" class="img-fluid rounded mt-3">
+                    {% endif %}
                 </header>
                 <section class="mb-4 content-blog">
                     {{post.body_text|safe}}
