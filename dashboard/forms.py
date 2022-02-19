@@ -34,6 +34,7 @@ class BlogForm(ModelForm):
     
     body_text = forms.Textarea(attrs={'id':'editor1'})
     title = forms.CharField(min_length=20, max_length=60)
+    img = forms.ImageField(required=False)
 
 class ProfileForm(ModelForm):
 
