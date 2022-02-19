@@ -1,7 +1,8 @@
 # django-blog-app
 ### 9 days of learning Django by creating a Blog App
 
-I created this blog app to help me learn django, by making a project, I think it can make me grow faster in learning something And this is the result of 9 days I learned django, umm... maybe more a few hours. Who's care?
+I created this blog app to help me learn django, by making a project, I think it can make me grow faster in learning something And this is the result of 9 days I learned django, umm... maybe more a few hours. Who's care? 
+more than 9 days now :D
 
 ## Installations
 - Clone this repo ```git clone https://github.com/gibran-abdillah/django-blog-app```
