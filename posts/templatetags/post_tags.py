@@ -20,5 +20,5 @@ def all_categories(contest):
 
 @register.filter(name='short_description')
 def short_description(value, l=200):
-    return ''.join(re.findall('<p>([\w\d\s\,\.\-]+)', value))[0:int(l)]
+    return ' '.join(re.findall('<p>([\w\d\s\,\.\-]+)</p>', value))[0:int(l)]
 
