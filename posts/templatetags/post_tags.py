@@ -23,4 +23,5 @@ def short_description(value, l=200):
 
 @register.filter(name='is_exists')
 def is_exists(value):
-    return os.path.exists(value)
+    if value and os.path.exists(value.path):
+        return True 
