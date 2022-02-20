@@ -12,7 +12,7 @@ more than 9 days now :D
 - Run Server ```python3 manage.py runserver``` or ```gunicorn django_blog.wsgi```
 
 ## Features And Demo
-I've written some of the features I remember <a href='https://gbrn-django-blog.herokuapp.com/blog/detail/features-in-this-blog-app-8p9rv'>HEREEEEEE</a>
+I've written some of the features I remember <a href='https://gbrn-django-blog.herokuapp.com/blog'>HEREEEEEE</a>
 - Demo : <a href='https://gbrn-django-blog.herokuapp.com'>https://gbrn-django-blog.herokuapp.com</a>
 
 ## Screenshot
