@@ -21,14 +21,14 @@
             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
             {% if user.is_authenticated %}
               
-                  <a class="dropdown-item" href="#">Your Blog</a>
-                  <a class="dropdown-item" href="#">Add blog</a>
+                  <a class="dropdown-item" href="{% url 'dashboard:lists_blog' %">Your Blog</a>
+                  <a class="dropdown-item" href="{% url 'dashboard:add_blog' %">Add blog</a>
                   <div class="dropdown-divider"></div>
                   <a class="dropdown-item" href="{% url 'dashboard:logout' %}">Logout</a>
               </div>
               {% else %}
-              <a class='dropdown-item' href='#'>Login</a>
-              <a class='dropdown-item' href='#'>Register</a>
+              <a class='dropdown-item' href='{% url "account:login_page" %}'>Login</a>
+              <a class='dropdown-item' href='{% url "account:register_page" %}'>Register</a>
             {% endif %}
           </li>
       </div>
