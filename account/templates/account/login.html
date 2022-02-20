@@ -5,8 +5,9 @@
 {% load crispy_forms_tags %}
 
 {% block content %}
+{% include 'main/utils/navbar.html' %}
 <div class='container mt-4'>
-    <form method="POST">
+    <form method="POST" >
         {% include 'main/utils/msg.html' %}
 
         {% csrf_token %}
