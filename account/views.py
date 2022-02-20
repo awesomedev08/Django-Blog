@@ -46,8 +46,7 @@ class LoginView(FormView):
         validate = authenticate(username=username, password=password)
         if validate:
             login(request, validate)
-            messages.success(request, 'Sukses gan')
-            return redirect(reverse('account:login_page'))
+            return redirect(reverse('dashboard:dashboard_index'))
             
         messages.warning(request, 'invalid username/password')
         return redirect(reverse('account:login_page'))    
