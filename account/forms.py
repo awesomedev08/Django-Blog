@@ -32,6 +32,8 @@ class RegisterForm(UserCreationForm):
         self.helper.error_text_inline = False 
         self.helper.add_input(Submit('submit', 'Register'))
     
+    username = forms.CharField(min_length=5, required=True)
+    
 
 class LoginForm(forms.Form):
     username = forms.CharField(max_length=50)
@@ -41,6 +43,3 @@ class LoginForm(forms.Form):
         super().__init__(*args, **kwargs)
         self.helper = FormHelper(self)
         self.helper.add_input(Submit('login','Login'))
-    
-
-
