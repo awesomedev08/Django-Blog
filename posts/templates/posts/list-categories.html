@@ -9,9 +9,9 @@
 {% block content %}
     {% include 'main/utils/navbar.html' %}
     <div class="container mt-5 body-blog">
-        <div class="row">
+        <div class="row hero">
             {% for category in categories %}
-            <div class="col-lg-4 mt-2 mb-2">
+            <div class="col-lg-5 mt-2 mb-2 mr-2">
                 
                     <a href="{% url 'blog:category' category.name %}" class="text-dark">{{category}}</a>
 
