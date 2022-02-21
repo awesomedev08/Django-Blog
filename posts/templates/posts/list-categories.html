@@ -1,0 +1,24 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+    List Categories
+{% endblock %}
+
+{% load post_tags %}
+
+{% block content %}
+    {% include 'main/utils/navbar.html' %}
+    <div class="container mt-5 body-blog">
+        <div class="row">
+            {% for category in categories %}
+            <div class="col-lg-4 mt-2 mb-2">
+                
+                    <a href="{% url 'blog:category' category.name %}" class="text-dark">{{category}}</a>
+
+            </div>
+            {% endfor %}
+            
+
+        </div>
+    </div>
+{% endblock %}
