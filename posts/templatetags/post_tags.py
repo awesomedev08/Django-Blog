@@ -6,7 +6,7 @@ register = template.Library()
 
 @register.simple_tag(takes_context=True)
 def recent_posts(context):
-    return Post.objects.all().order_by('-created_at')[0:4]
+    return Post.objects.all().order_by('-created_at')[0:5]
 
 @register.simple_tag(takes_context=True)
 def get_categories(context):
