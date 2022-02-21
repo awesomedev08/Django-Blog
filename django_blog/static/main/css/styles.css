@@ -33,3 +33,15 @@
 .landing-wrapper {
     padding-left: 200px;
 }
+
+@media screen and (max-width: 600px) {
+    .hero {
+      margin-left: 22px;
+    }
+  }
+@media screen and (min-width: 800px ) {
+    .navbar .navbar-nav .nav-item {
+      margin-left: 10px;
+    }
+  }
+  

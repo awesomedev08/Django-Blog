@@ -7,7 +7,7 @@
 {% load post_tags %}
 <div class="row d-flex">
     <div class="container">
-        <div class="col-lg-6 mt-4">
+        <div class="col-lg-6 mt-4 hero">
             <h2 style="font-weight: 300;">Blog Web App with Django</h2>
             <p class='text-opening'>
                     If there's no book beside you, maybe you can read someone's writing here. Or maybe you want to be a contributor to the art of writing here?
@@ -28,7 +28,7 @@
         {% recent_posts as recent %}
 
         {% for recents in recent %}
-        <div class="col-md-3">
+        <div class="col-md-3 mb-3">
             <div class="card">
                 
                 <div class="card-body">
