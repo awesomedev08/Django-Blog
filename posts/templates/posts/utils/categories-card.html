@@ -4,17 +4,12 @@
         <a href="{% url 'blog:list_categories' %}">Categories</a>
     </div>
     <div class="card-body">
-        <div class="row d-flex">
+        <div class="row">
             {% get_categories as categories%}
             {% for category in categories %}
-            <div class="col-sm-6">
-                <ul class="list-unstyled">
-
-                    <li>
+            <div class="col-xs-3 ml-2">
+                
                             <a href="{% url 'blog:category' category.name %}" class="btn btn-outline-dark mb-3">{{category.name}}</a>
-                    </li>
-
-                </ul>
             </div>
             {% endfor %}
         </div>
