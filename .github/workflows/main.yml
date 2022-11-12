@@ -13,4 +13,5 @@ jobs:
       with:
         server: ftp.gibranabdillah.my.id
         username: gibranab
+        server-dir: public_html/dj_project/
         password: ${{ secrets.ftp_password }}
